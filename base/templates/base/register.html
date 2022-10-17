@@ -1,0 +1,40 @@
+{% extends 'base/index.html' %} {% block content %}
+
+<div class="container">
+  <div class="header">
+    <h1>Register</h1>
+  </div>
+
+  <div class="form-wrapper">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="title">
+        <div class="label">{{form.username.label}}:</div>
+        <div class="input">{{ form.username }}</div>
+      </div>
+      <div class="title">
+        <div class="label">{{form.password1.label}}:</div>
+        <div class="input">{{ form.password1 }}</div>
+      </div>
+      <div class="title">
+        <div class="label">{{form.password2.label}}:</div>
+        <div class="input">{{ form.password2 }}</div>
+      </div>
+        {% for field in form %}
+            <div class="text-danger">
+                {{ field.errors.as_ul }}
+            </div>
+        {% endfor %} 
+      <input class="buttons create" type="submit" value="Register" />
+    </form>
+  </div>
+
+  <div class="content">
+    <p>
+      Have an account?
+      <a class="buttons create" href="{% url 'login' %}">Login</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

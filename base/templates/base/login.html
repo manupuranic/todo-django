@@ -1,0 +1,34 @@
+{% extends 'base/index.html' %} {% block content %}
+
+<div class="container">
+  <div class="header">
+    <h1>Login page</h1>
+  </div>
+  <div class="form-wrapper">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="title">
+        <div class="label">{{form.username.label}}:</div>
+        <div class="input">{{ form.username }}</div>
+      </div>
+      <div class="completed">
+        <div class="label">{{form.password.label}}:</div>
+        <div class="input">{{ form.password }}</div>
+      </div>
+      {% for error in form.username.errors %}
+      <p class="text-danger">{{ error }}</p>
+      {% endfor %} {% if form.non_field_errors %} 
+      {% for error in form.non_field_errors %}
+      <p class="text-danger">{{ error }}</p>
+      {% endfor %} {% endif %}
+      <input class="buttons create" type="submit" value="Login" />
+    </form>
+  </div>
+  <div class="content">
+    <h3>
+      New user?
+      <a class="buttons create" href="{% url 'register' %}">Register Here</a>
+    </h3>
+  </div>
+</div>
+{% endblock %}

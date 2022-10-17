@@ -1,0 +1,24 @@
+{% extends 'base/index.html' %} {% block content %}
+<div class="container">
+  <div class="header">
+    <h1>Create new Task</h1>
+    <a class="buttons" href="{% url 'tasks' %}">Go back</a>
+  </div>
+
+  <form method="POST">
+    <div class="form-wrapper">
+      {% csrf_token %}
+      <div class="title">
+        <div class="label">{{form.title.label}}:</div>
+        <div class="input">{{ form.title }}</div>
+      </div>
+      <div class="completed">
+        <div class="label">{{form.completed.label}}:</div>
+        <div class="input">{{ form.completed }}</div>
+      </div>
+      <!-- {{ form.as_p }} -->
+    </div>
+    <input class="buttons create" type="submit" value="Create" />
+  </form>
+</div>
+{% endblock %}

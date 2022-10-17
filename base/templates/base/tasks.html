@@ -1,0 +1,52 @@
+{% extends 'base/index.html' %} {% block content %}
+
+<div class="container">
+  <div class="header">
+    <p>Hi, {{user | title}}</p>
+    <div class="header-buttons">
+      <a class="buttons" href="{% url 'create' %}">Create</a>
+      <a class="buttons" href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+
+  <div class="search-wrapper">
+    <form method="GET">
+      {% csrf_token %}
+      <input
+        class="search-box"
+        type="text"
+        name="search"
+        value="{{search_input}}"
+      />
+      <input class="buttons search" type="submit" value="Search" />
+    </form>
+  </div>
+  <div class="list-view">
+    <ul class="list-group">
+      {% for task in tasks %}
+
+      <li
+        class="list-group-item d-flex justify-content-between align-items-end"
+      >
+        {% if task.completed %}
+        <i><s>{{task}}</s></i>
+        {% else %} {{task}} {% endif %}
+        <div class="icons">
+          <a href="{% url 'delete' task.id %}"
+            ><i class="fa fa-trash" id="delete"></i
+          ></a>
+          <a href="{% url 'edit' task.id %}"
+            ><i class="fa fa-edit" id="edit"></i
+          ></a>
+        </div>
+      </li>
+      {% empty %}
+      <p class="content"><center>No tasks to do</center></p>
+      <a class="buttons create" href="{% url 'create' %}"
+        ><center>Create Task</center></a
+      >
+      {% endfor %}
+    </ul>
+  </div>
+  {% endblock %}
+</div>

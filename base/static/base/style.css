@@ -1,0 +1,132 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* background-color: rgb(207, 204, 204); */
+  background-color: rgb(163, 255, 224);
+  /* font-family: "Roboto Mono", monospace; */
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+}
+
+.container {
+  margin: auto;
+  width: 60%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 10px;
+  background-color: white;
+  border: 3px solid rgb(51, 215, 160);
+  border-radius: 20px;
+}
+
+.header {
+  background-image: linear-gradient(
+    to right,
+    #5fdd93,
+    #4fe689,
+    #3dee7d,
+    #28f66e,
+    #00fe5c
+  );
+  font-family: "Roboto Mono", monospace;
+  font-size: 2rem;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  text-decoration: none;
+  border: 2px solid #00fe5c;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 0.75rem;
+  color: #00ac3f;
+}
+
+.buttons:hover {
+  background-color: #00ac3f;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.buttons.create {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 2px solid #00ac3f;
+  margin-left: 1rem;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search-box {
+  border: 2px solid #00ac3f;
+  border-radius: 10px;
+  padding: 0.25rem 10rem 0.25rem 10rem;
+}
+
+.buttons.search {
+  padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+  border-radius: 10px;
+  background-color: #00ac3f;
+  color: #fff;
+  border: 2px solid #00ac3f;
+}
+
+.list-view {
+  font-size: 1.25rem;
+}
+
+.icons {
+  font-size: 1.75rem;
+}
+
+#delete {
+  color: red;
+  margin-right: 0.5rem;
+}
+
+#edit {
+  color: #04ce33;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #00ac3f;
+}
+
+.title {
+  display: flex;
+  margin: 1rem;
+}
+
+.completed {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.label {
+  margin-right: 1rem;
+}
+
+.input {
+  border: 0.5px solid #00ac3f;
+  /* padding: 0 3rem 0 3rem; */
+}
+
+.content {
+  margin: 0 1rem 0 1rem;
+  font-size: 1.4rem;
+}
